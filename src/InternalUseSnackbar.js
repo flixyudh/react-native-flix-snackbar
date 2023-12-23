@@ -7,15 +7,12 @@ const InternalUseSnackbar = () => {
     setSnackbarList(null);
   }, []);
 
-  const show = React.useCallback(
-    (message, options) => {
-      const id = Date.now().toString(36);
-      requestAnimationFrame(() => {
-        setSnackbarList({ message, id, hide, ...options });
-      });
-    },
-    [hide]
-  );
+  const show = React.useCallback((message, options) => {
+    const id = Date.now().toString(36);
+    requestAnimationFrame(() => {
+      setSnackbarList({ message, id, hide, ...options });
+    });
+  }, []);
 
   return {
     SnackbarData,

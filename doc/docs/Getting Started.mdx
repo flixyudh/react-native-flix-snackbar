@@ -1,0 +1,41 @@
+---
+description: Create a doc page with rich content.
+sidebar_position: 2
+---
+
+# Getting Started
+
+## Installation
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+```bash npm2yarn
+npm install react-native-flix-snackbar
+```
+
+## Usage
+
+Wrap your root component in `SnackbarProvider` from `react-native-flix-snackbar`. This will usually be in the `index.js` or `App.js` file. If you have an Expo project, you can do this inside the exported component in the `App.js` file.
+
+Example:
+
+```js
+import { SnackbarProvider } from 'react-native-flix-snackbar';
+
+export default function App() {
+  return (
+    // highlight-start
+    <SnackbarProvider>
+      // highlight-end
+      <MainApp />
+      // highlight-start
+    </SnackbarProvider>
+    // highlight-end
+  );
+}
+```
+
+:::info
+After you add `SnackbarProvider`, you can show snackbar in all of it's children components using [`useSnackbar`](./API/usesnackbar) hooks without declaring ref and import JSX in every component.
+:::

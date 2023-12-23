@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  contain: content;
+
+  background-color: var('docusaurus-highlighted-code-line-bg');
+  border: 1px solid var('--ifm-color-primary-light');
+  margin-bottom: 4px;
+}
+
+.largerContainer {
+  min-height: 400px;
+}
+
+/* Preferred height in code section of container. */
+
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+
+  padding: 0.25em 1.25em 0.25em 1.25em;
+  margin: 1.5em 1.5em 1.5em 1.5em;
+  background-color: rgba(145, 159, 207, 0.2);
+  border-radius: 25px;
+}
+
+.upperButtonsContainer {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 996px) {
+  .upperButtonsContainer {
+    justify-content: center;
+
+    margin: 1.5em;
+  }
+}
+
+.lowerButtonsContainer {
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.iconStub {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 996px) {
+  .container[data-ispreview='false'] .buttonsContainer {
+    position: relative;
+    width: fit-content;
+    margin: 1.5em auto;
+  }
+}
+
+.previewContainer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 996px) {
+  .container[data-ispreview='false'] .previewContainer {
+    margin-top: 0;
+  }
+}
+
+.actionButton {
+  margin-right: 0.5em;
+  padding: 0 0 2px 0;
+
+  border: none;
+  background-color: inherit;
+  color: var(--ifm-color-primary-darkest);
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.actionButtonActive {
+  color: var(--ifm-color-primary-lighter);
+  border-bottom: 1px solid var(--ifm-color-primary-lighter);
+}
+
+.interactiveCodeBlock [class*='codeBlockContent'] code {
+  width: 100%;
+  max-height: max-content;
+  border: 1px solid var(--ifm-color-primary-light);
+}

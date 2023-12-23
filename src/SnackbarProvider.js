@@ -31,7 +31,7 @@ export const SnackbarProvider = ({ children, style }) => {
         style={[styles.containerView, style]}
         pointerEvents="box-none"
       >
-        <Snackbar {...SnackbarData} />
+        {SnackbarData && <Snackbar key={SnackbarData?.id} {...SnackbarData} />}
       </KeyboardAvoidingView>
     </SnackbarContext.Provider>
   );

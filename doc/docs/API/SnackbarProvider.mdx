@@ -1,0 +1,28 @@
+## SnackbarProvider
+
+```js
+import { SnackbarProvider } from 'react-native-flix-snackbar';
+```
+
+The `<SnackbarProvider>` component makes [`useSnackbar`](./API/usesnackbar) hook available to any nested component that need to show snackbar.
+
+:::info
+`<SnackbarProvider>` doesn't need any props to passed, so you can easily use it in root component like this:
+
+```js
+import { SnackbarProvider } from 'react-native-flix-snackbar';
+
+export default function App() {
+  return (
+    // highlight-start
+    <SnackbarProvider>
+      // highlight-end
+      <MainApp />
+      // highlight-start
+    </SnackbarProvider>
+    // highlight-end
+  );
+}
+```
+
+:::

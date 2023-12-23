@@ -6,13 +6,12 @@ let handleTimeout;
 const Snackbar = ({
   message,
   label,
-  hide,
-  duration = 2000,
-  isError = false,
   onPress,
+  duration = 2000,
   backgroundColor = '#424940',
   color = '#dee5d8',
   id,
+  hide,
   ...props
 }) => {
   const animation = React.useRef(new Animated.Value(0)).current;
@@ -53,8 +52,6 @@ const Snackbar = ({
     });
     clearTimeout(handleTimeout);
   };
-
-  if (!message) return null;
 
   return (
     <Animated.View
