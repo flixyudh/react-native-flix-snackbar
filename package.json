@@ -20,10 +20,8 @@
     "docs"
   ],
   "scripts": {
-    "prepare": "npm run build-ts",
-    "build-ts": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "release": "release-it",
+    "release": "npx tsc && release-it",
     "docs": "yarn workspace docs",
     "example": "yarn workspace example"
   },
