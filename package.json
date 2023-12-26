@@ -19,7 +19,6 @@
     "example",
     "docs"
   ],
-  "private": true,
   "scripts": {
     "prepare": "npm run build-ts",
     "build-ts": "tsc",
