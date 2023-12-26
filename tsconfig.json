@@ -1,11 +1,23 @@
 {
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/*"
+  ],
   "compilerOptions": {
-    "rootDir": ".",
     "paths": {
       "react-native-flix-snackbar": [
         "./src/index"
       ]
     },
+    "allowJs": true,
+    "module": "es6",
+    "declaration": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "removeComments": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
@@ -14,7 +26,6 @@
     "lib": [
       "esnext"
     ],
-    "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -24,9 +35,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "verbatimModuleSyntax": true
   }
 }

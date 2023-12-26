@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { SnackbarProvider, useSnackbar } from 'react-native-flix-snackbar';
 
 const Example = (props) => {
-  const show = useSnackbar();
+  const { show } = useSnackbar();
 
   const listButton = [
     {

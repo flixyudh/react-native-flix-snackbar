@@ -1,102 +1,41 @@
 {
   "name": "react-native-flix-snackbar",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "description": "Easy usage of snackbar without ref",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
-  "types": "lib/typescript/src/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
+  "main": "dist/index.js",
+  "react-native": "./dist/index",
+  "module": "dist/index",
+  "types": "dist/index.d.ts",
+  "source": "dist/index",
   "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "dist"
   ],
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    }
+  },
+  "workspaces": [
+    "example",
+    "docs"
+  ],
+  "private": true,
   "scripts": {
-    "example": "yarn workspace react-native-flix-snackbar-example",
-    "doc": "yarn workspace doc",
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build-ts",
+    "build-ts": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli lib",
-    "prepare": "bob build",
-    "release": "release-it"
+    "release": "release-it",
+    "docs": "yarn workspace docs",
+    "example": "yarn workspace example"
   },
   "keywords": [
     "react-native",
     "ios",
     "android"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flixyudh/react-native-flix-snackbar.git"
-  },
   "author": "Flix <flixy121@gmail.com> (https://github.com/flixyudh)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/flixyudh/react-native-flix-snackbar/issues"
-  },
-  "homepage": "https://github.com/flixyudh/react-native-flix-snackbar#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "devDependencies": {
-    "@commitlint/config-conventional": "^17.0.2",
-    "@evilmartians/lefthook": "^1.5.0",
-    "@react-native/babel-preset": "^0.74.0",
-    "@react-native/eslint-config": "^0.72.2",
-    "@release-it/conventional-changelog": "^5.0.0",
-    "@types/jest": "^28.1.2",
-    "@types/react": "~17.0.21",
-    "@types/react-native": "0.70.0",
-    "commitlint": "^17.0.2",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.4.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^28.1.1",
-    "prettier": "^2.0.5",
-    "react": "18.2.0",
-    "react-native": "0.72.6",
-    "react-native-builder-bob": "^0.20.0",
-    "release-it": "^15.0.0",
-    "typescript": "^5.0.2"
-  },
-  "resolutions": {
-    "@types/react": "17.0.21"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
-  "workspaces": [
-    "example",
-    "doc"
-  ],
-  "packageManager": "yarn@3.6.1",
-  "engines": {
-    "node": ">= 18.0.0"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/doc/node_modules",
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
   },
   "commitlint": {
     "extends": [
@@ -119,6 +58,27 @@
         "preset": "angular"
       }
     }
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.0.2",
+    "@react-native/babel-preset": "^0.74.0",
+    "@react-native/eslint-config": "^0.72.2",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "0.70.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jsdoc-to-markdown": "^8.0.0",
+    "prettier": "^2.0.5",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-builder-bob": "^0.23.2",
+    "release-it": "^15.0.0"
   },
   "eslintConfig": {
     "root": true,
@@ -144,7 +104,7 @@
   "eslintIgnore": [
     "node_modules/",
     "doc/",
-    "lib/"
+    "dist/"
   ],
   "prettier": {
     "quoteProps": "consistent",
@@ -153,18 +113,9 @@
     "trailingComma": "es5",
     "useTabs": false
   },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
-  }
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "yarn@3.6.1"
 }

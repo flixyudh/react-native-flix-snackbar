@@ -1,13 +1,17 @@
-import React from 'react';
+import { useCallback, useState } from 'react';
 
+/**
+ * @file InternalUseSnackbar.js
+ * This is a React component used for managing and displaying snackbars.
+ */
 const InternalUseSnackbar = () => {
-  const [SnackbarData, setSnackbarList] = React.useState(null);
+  const [SnackbarData, setSnackbarList] = useState(null);
 
-  const hide = React.useCallback(() => {
+  const hide = useCallback(() => {
     setSnackbarList(null);
   }, []);
 
-  const show = React.useCallback((message, options) => {
+  const show = useCallback((message, options) => {
     const id = Date.now().toString(36);
     requestAnimationFrame(() => {
       setSnackbarList({ message, id, hide, ...options });
@@ -15,8 +19,20 @@ const InternalUseSnackbar = () => {
   }, []);
 
   return {
+    /** @type {import("./Snackbar").SnackbarData} */
     SnackbarData,
+    /**
+     * A function to display a snackbar.
+     *
+     * @param {String} message
+     * @param {OptionsType} options
+     */
     show,
+    /**
+     * A function to hide a snackbar.
+     *
+     * @returns {void}
+     */
     hide,
   };
 };

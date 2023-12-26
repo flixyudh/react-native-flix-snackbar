@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 let handleTimeout;
 
+/**
+ * @typedef {object} SnackbarData
+ * @prop {string} message - The message to be displayed in the snackbar.
+ * @prop {string} [label] - The label for the action button (optional).
+ * @prop {function} [onPress] - The callback function for the action button (optional).
+ * @prop {number} [duration] - The duration in milliseconds for which the snackbar should be visible (default: 2000).
+ * @prop {string} [backgroundColor] - The background color of the snackbar (default: '#424940').
+ * @prop {string} [color] - The text color of the snackbar (default: '#dee5d8').
+ * @prop {string} id - The unique identifier for the snackbar.
+ * @prop {function} hide - The function to hide the snackbar.
+ */
+
+/**
+ * @file Snackbar.js
+ * @brief This is a React Native component used for displaying snackbars.
+ *
+ * @param {SnackbarData} Props
+ *
+ * @returns {JSX.Element} The snackbar component.
+ */
 const Snackbar = ({
   message,
   label,
@@ -14,7 +34,7 @@ const Snackbar = ({
   hide,
   ...props
 }) => {
-  const animation = React.useRef(new Animated.Value(0)).current;
+  const animation = useRef(new Animated.Value(0)).current;
 
   const handleDuration = label ? 7000 : duration;
 
@@ -38,7 +58,7 @@ const Snackbar = ({
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (handleTimeout) clearTimeout(handleTimeout);
     runAnimated(1).start();
     if (handleDuration !== 0)
