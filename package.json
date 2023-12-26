@@ -26,8 +26,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "release": "release-it",
     "docs": "yarn workspace docs",
-    "example": "yarn workspace example",
-    "postinstall": "husky install"
+    "example": "yarn workspace example"
   },
   "keywords": [
     "react-native",
