@@ -1,6 +1,6 @@
 {
   "name": "react-native-flix-snackbar",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Easy usage of snackbar without ref",
   "main": "dist/index.js",
   "react-native": "./dist/index",
@@ -21,7 +21,7 @@
   ],
   "private": true,
   "scripts": {
-    "prepublish": "npm run build-ts",
+    "prepare": "npm run build-ts",
     "build-ts": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "release": "release-it",
