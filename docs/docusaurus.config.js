@@ -12,27 +12,19 @@ const config = {
     'A cross platform snackbar component for Android and iOS, Pure JS snackbar with zero-dependencies, Supports custom colors.',
   favicon: 'img/favicon.ico',
 
-  plugins: [
-    [
-      '@gorhom/docusaurus-react-native-plugin',
-      {
-        alias: {
-          'react-native-flix-snackbar': path.resolve(__dirname, '../src/'),
-        },
-      },
-    ],
-  ],
+  plugins: ['./plugin/react-native-web.js'],
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://flixyudh.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/react-native-flix-snackbar',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Flix', // Usually your GitHub org/user name.
+  organizationName: 'flixyudh', // Usually your GitHub org/user name.
   projectName: 'react-native-flix-snackbar', // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,7 +47,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/flixyudh/react-native-flix-snackbar/tree/main/docs/',
           remarkPlugins: [
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
