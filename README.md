@@ -1,3 +1,7 @@
+# Introduction
+
+Refer to the [Introduction](https://flixyudh.github.io/react-native-flix-snackbar/docs/Intro).
+
 # Getting Started
 
 Refer to the [Getting Started](https://flixyudh.github.io/react-native-flix-snackbar/docs/Getting%20Started) for the instructions.
