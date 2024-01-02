@@ -1,5 +1,7 @@
 
 
+## [1.0.2](https://github.com/flixyudh/react-native-flix-snackbar/compare/v1.0.1...v1.0.2) (2024-01-02)
+
 ## [1.0.1](https://github.com/flixyudh/react-native-flix-snackbar/compare/v1.0.0...v1.0.1) (2023-12-26)
 
 # [1.0.0](https://github.com/flixyudh/react-native-flix-snackbar/compare/v0.2.0...v0.2.0) (2023-12-26)
