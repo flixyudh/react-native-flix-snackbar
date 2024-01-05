@@ -59,7 +59,7 @@ The backgroundColor of Snackbar container
 ```js
 import { useSnackbar } from 'react-native-flix-snackbar';
 
-const show = useSnackbar();
+const { show } = useSnackbar();
 
 // showing snackbar
 <TouchableOpacity onPress={() => show('Hi snackbar!')}>
