@@ -2,7 +2,26 @@
 import { useSnackbar } from 'react-native-flix-snackbar';
 ```
 
-`useSnackbar` automatically handle Snackbar component either to show or hide
+`useSnackbar` is a hook to automatically handle Snackbar component either to show or hide
+
+### Example usage
+
+```js
+// other import
+import { useSnackbar } from 'react-native-flix-snackbar';
+
+export default MainApp = props => {
+  const { show } = useSnackbar();
+
+  return (
+    <View style={{flex: 1}}>
+      <TouchableOpacity onPress={() => show('Hi snackbar!')}>
+        <Text>Open Snackbar</Text>
+      </TouchableOpacity>;
+    </View>
+  );
+};
+```
 
 ## Props
 
@@ -53,16 +72,3 @@ Type: `string`
 default: `#424940`
 
 The backgroundColor of Snackbar container
-
-## Example
-
-```js
-import { useSnackbar } from 'react-native-flix-snackbar';
-
-const { show } = useSnackbar();
-
-// showing snackbar
-<TouchableOpacity onPress={() => show('Hi snackbar!')}>
-  <Text>Open Snackbar</Text>
-</TouchableOpacity>;
-```

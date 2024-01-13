@@ -43,6 +43,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -65,17 +66,12 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'react-native-flix-snackbar',
-        logo: {
-          alt: 'react-native-flix-snackbar Logo',
-          src: 'img/logo.svg',
-        },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Getting Started',
+            label: 'React Native Flix Snackbar',
           },
           {
             href: 'https://github.com/flixyudh/react-native-flix-snackbar',

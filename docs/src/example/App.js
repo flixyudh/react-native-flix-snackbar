@@ -37,6 +37,9 @@ const Example = (props) => {
     <View
       style={{ flex: 1, backgroundColor: '#fff', padding: 24, borderRadius: 4 }}
     >
+      <Text style={{ textAlign: 'center', fontSize: 36, marginBottom: 24 }}>
+        Press Us
+      </Text>
       {listButton.map((x, i) => (
         <TouchableOpacity
           onPress={x.onPress}

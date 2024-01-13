@@ -34,5 +34,26 @@ export default function App() {
 ```
 
 :::info
-After you add `SnackbarProvider`, you can show snackbar in all of it's children components using [`useSnackbar`](./API/usesnackbar) hooks without declaring ref and import JSX in every component.
+After wrapping `SnackbarProvider` in root component, you can show snackbar in all of it's children components using [`useSnackbar`](./API/usesnackbar) hooks without declaring `ref` and import JSX in every component.
 :::
+
+`useSnackbar` Example:
+
+```js
+import React from 'react';
+import {View, TouchableOpacity, Text} from 'react-native';
+import { useSnackbar } from 'react-native-flix-snackbar';
+
+export default MainApp = props => {
+  const { show } = useSnackbar();
+
+  return (
+    <View style={{flex: 1}}>
+      // showing snackbar
+      <TouchableOpacity onPress={() => show('Hi snackbar!')}>
+        <Text>Open Snackbar</Text>
+      </TouchableOpacity>;
+    </View>
+  );
+};
+```
