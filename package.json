@@ -23,7 +23,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "release": "npx tsc && release-it",
     "docs": "yarn workspace docs",
-    "example": "yarn workspace example"
+    "example": "yarn workspace example start"
   },
   "keywords": [
     "react-native",

@@ -92,6 +92,7 @@ const Snackbar = ({
             color,
             paddingRight: label ? 0 : 16,
           },
+          props.textStyle ?? {},
         ]}
       >
         {message}
@@ -101,7 +102,9 @@ const Snackbar = ({
           style={styles.buttonContainer}
           onPress={() => onHide(onPress)}
         >
-          <Text style={{ color, fontWeight: '500' }}>{label}</Text>
+          <Text style={[{ color, fontWeight: '500' }, props.labelStyle ?? {}]}>
+            {label}
+          </Text>
         </TouchableOpacity>
       )}
     </Animated.View>

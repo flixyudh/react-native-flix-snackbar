@@ -3,7 +3,7 @@ import { Button, Text, View } from 'react-native';
 import { useSnackbar } from 'react-native-flix-snackbar';
 
 const Example = (props) => {
-  const show = useSnackbar();
+  const { show } = useSnackbar();
 
   return (
     <View style={{ flex: 1 }}>
@@ -42,7 +42,16 @@ const Example = (props) => {
       />
       <Button
         title="Snackbar Error"
-        onPress={() => show('404 Not Found', { isError: true })}
+        onPress={() =>
+          show('404 Not Found', {
+            isError: true,
+            backgroundColor: 'red',
+            color: 'white',
+            textStyle: { fontWeight: 'bold', textAlign: 'center' },
+            label: 'label',
+            labelStyle: { fontSize: 22 },
+          })
+        }
       />
     </View>
   );
